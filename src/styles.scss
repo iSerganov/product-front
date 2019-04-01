@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  background-color: #f4f4f4;
+
+  .mat-chip-list-stacked {
+    mat-icon {
+      margin: 0 10px;
+    }
+
+    mat-chip {
+      max-width: 145px;
+    }
+
+    @media (max-width: 595px) {
+      mat-chip {
+        font-size: 10px;
+      }
+    }
+  }
+
+  mat-toolbar {
+
+    .mat-form-field-outline-end,
+    .mat-form-field-outline-gap,
+    .mat-form-field-outline-start {
+      border-color: #fff !important;
+    }
+
+    .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-outline-gap {
+      border-top-color: transparent !important;
+    }
+  }
+
+  mark {
+    padding: 0;
+    background-color: #17a2b8;
+    color: #fff;
+  }
+}

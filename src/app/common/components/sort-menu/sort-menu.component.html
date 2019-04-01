@@ -1,0 +1,13 @@
+<button class="d-none d-md-block" mat-raised-button color="accent" [matMenuTriggerFor]="menu" aria-label="Sort by menu">
+  Sort by: {{sortBy}}
+</button>
+<button class="small-button col d-block d-md-none" mat-raised-button color="accent" [matMenuTriggerFor]="menu"
+  aria-label="Sort by menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item *ngFor="let prop of properties;" (click)="changeSorting.emit(prop)">
+    <mat-icon>{{prop.icon}}</mat-icon>
+    <span>{{prop.name}}</span>
+  </button>
+</mat-menu>

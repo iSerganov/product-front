@@ -1,0 +1,46 @@
+<mat-card class="tariff-list">
+  <mat-toolbar>
+    <mat-form-field appearance="outline">
+      <mat-label>Filter</mat-label>
+      <input matInput [(ngModel)]="filter" />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <app-sort-menu (changeSorting)="sort($event)" [properties]="properties"></app-sort-menu>
+    <mat-slide-toggle (change)="sort()" [(ngModel)]="ascending">Asc</mat-slide-toggle>
+  </mat-toolbar>
+  <mat-card *ngFor="let t of tariffs | filterTariffs: filter; let i = index;" class="single-tariff">
+    <div class="row">
+      <div class="number">
+        {{i + 1}}.
+      </div>
+      <mat-divider class="d-none d-md-block" [vertical]="true"></mat-divider>
+      <div class="tariff-name col" innerHTML="{{ t.name | highlight : filter }}"></div>
+      <div class="speed col">
+        <mat-chip-list aria-label="Speed" class="mat-chip-list-stacked">
+          <mat-chip color="primary" selected>
+            <mat-icon>cloud_download</mat-icon><span
+              innerHTML="{{ t.downloadSpeed | highlight : filter }} Mbit/s"></span>
+          </mat-chip>
+          <mat-chip color="warn" selected>
+            <mat-icon>cloud_upload</mat-icon><span innerHTML="{{ t.uploadSpeed | highlight : filter }} Mbit/s"></span>
+          </mat-chip>
+        </mat-chip-list>
+      </div>
+      <div class="benefits col d-none d-md-block">
+        <ul>
+          <li *ngFor="let b of t.benefits" innerHTML="{{ b | highlight : filter }}"></li>
+        </ul>
+      </div>
+      <div class="price-details col">
+        <div innerHTML="{{ t.price | currency:'EUR' | highlight : filter }}"></div>
+        <div class="d-none d-sm-block"><button mat-raised-button color="accent">To tariff <mat-icon>exit_to_app
+            </mat-icon></button></div>
+      </div>
+      <div class="col d-block d-sm-none">
+        <button mat-raised-button color="accent" class="min-button">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</mat-card>
