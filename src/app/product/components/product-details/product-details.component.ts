@@ -34,7 +34,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
         this.initializeForm(new Product(
           {
             id: '',
-            name: 'New awesome name for your peoduct',
+            name: 'New awesome name for your product',
             category: this.categories[0],
             isActive: true,
             price: 1
