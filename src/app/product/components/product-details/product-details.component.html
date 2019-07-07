@@ -1,0 +1,33 @@
+<mat-card>
+  <h2 *ngIf="!isNew">Edit product: {{product?.id}}</h2>
+  <h2 *ngIf="isNew">Create new product</h2>
+
+  <mat-card>
+    <form [formGroup]="productForm">
+      <div class="row">
+        <mat-form-field appearance="outline" class="col-6">
+          <mat-label>Name</mat-label>
+          <input formControlName="name" matInput required />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-6">
+          <mat-label>Category</mat-label>
+          <mat-select formControlName="category" required>
+            <mat-option *ngFor="let cat of categories" [value]="cat">
+              {{cat.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline" class="col-6">
+          <mat-label>Price</mat-label>
+          <input formControlName="price" matInput />
+        </mat-form-field>
+        <div class="col-6">
+          <mat-label>Is Active</mat-label>
+          <mat-slide-toggle formControlName="isActive">Is Active</mat-slide-toggle>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</mat-card>

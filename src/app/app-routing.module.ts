@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'tariffs', loadChildren: './tariff/tariff.module#TariffModule' },
+  { path: 'products', loadChildren: './product/product.module#ProductModule' },
   {
     path: '',
-    redirectTo: 'tariffs',
+    redirectTo: 'products',
     pathMatch: 'full'
   },
   {
@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

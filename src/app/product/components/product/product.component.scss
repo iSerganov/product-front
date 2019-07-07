@@ -1,5 +1,5 @@
-.tariff-list {
-  height: calc(100vh - 105px);
+.product-list {
+  height: calc(100vh - 150px);
   position: relative;
   margin: 20px 20px;
   display: flex;
@@ -7,11 +7,12 @@
   justify-content: flex-start;
   overflow: auto;
 
-  .single-tariff {
+
+  .single-product {
     margin: 10px 0;
   }
 
-  .single-tariff:hover {
+  .single-product:hover {
     background-color: rgb(194, 224, 236);
   }
 
@@ -72,12 +73,12 @@
     }
   }
 
-  .tariff-name {
+  .product-name {
     min-width: 85px;
   }
 
   @media (max-width: 515px) {
-    .tariff-name {
+    .product-name {
       max-width: 85px;
       overflow: hidden;
       white-space: nowrap;
@@ -94,4 +95,16 @@
       padding-right: 10px;
     }
   }
+}
+
+.mat-row {
+  cursor: pointer;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #d4d4d4;
+}
+
+h2 {
+  margin: 20px;
 }

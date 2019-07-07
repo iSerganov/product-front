@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TariffList": {
+    "ProductList": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/TariffList",
+            "outputPath": "dist/ProductList",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "TariffList:build"
+            "browserTarget": "ProductList:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "TariffList:build:production"
+              "browserTarget": "ProductList:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TariffList:build"
+            "browserTarget": "ProductList:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "TariffList-e2e": {
+    "ProductList-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "TariffList:serve"
+            "devServerTarget": "ProductList:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "TariffList:serve:production"
+              "devServerTarget": "ProductList:serve:production"
             }
           }
         },
@@ -135,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "TariffList"
+  "defaultProject": "ProductList"
 }

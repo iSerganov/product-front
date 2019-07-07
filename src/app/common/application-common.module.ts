@@ -8,4 +8,4 @@ import { SortMenuComponent } from './components/sort-menu/sort-menu.component';
   imports: [CommonModule, MatMenuModule, MatButtonModule, MatIconModule],
   exports: [SortMenuComponent]
 })
-export class TariffListCommonModule {}
+export class ProductListCommonModule {}
