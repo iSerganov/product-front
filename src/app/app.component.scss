@@ -7,3 +7,28 @@
     }
   }
 }
+
+.footer {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  background: #fff;
+  padding: 10px;
+  justify-content: space-between;
+  border: solid 1px #d4d4d4;
+
+  .left {
+    display: flex;
+    width: 120px;
+    justify-content: space-between;
+    margin: 0 30px;
+  }
+
+  .right {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    margin: 0 30px;
+  }
+}
