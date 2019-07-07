@@ -5,6 +5,7 @@ import { PropertyForSort } from 'src/app/common/models/property-for-sort';
 import { Product, ProductApiService } from 'src/shared/api-services/services';
 import { MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product',
@@ -24,7 +25,8 @@ export class ProductComponent implements OnInit, OnDestroy {
     private _productService: ProductApiService,
     private _helpService: HelpService,
     private _cdr: ChangeDetectorRef,
-    private _router: Router) { }
+    private _router: Router,
+    private _toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.subscriptions.push(
@@ -62,6 +64,19 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   goToProduct(id: string): void {
     this._router.navigateByUrl(`products/product-details/${id}`);
+  }
+
+  delete(e: any, product: Product) {
+    e.stopImmediatePropagation();
+    this._productService.delete(product.id).subscribe(() => {
+      this._toastr.success(`Product '${product.name}' deleted forever`);
+      const index = this.products.data.indexOf(product);
+      this.products.data.splice(index, 1);
+      this.products._updateChangeSubscription();
+      this._cdr.detectChanges();
+    }, error => {
+      this._toastr.error(`Something went wrong: ${error.message}`);
+    });
   }
 
 }

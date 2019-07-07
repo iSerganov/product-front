@@ -21,6 +21,7 @@ import { ProductListCommonModule } from '../common/application-common.module';
 import { ServiceProxyModule } from 'src/shared/api-services/api-service.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { CategoryResolverService } from './services/category-resolver.service';
 
 @NgModule({
   declarations: [ProductComponent, ProductDetailsComponent],
@@ -46,6 +47,6 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     MatSlideToggleModule,
     MatFormFieldModule
   ],
-  providers: [HelpService, HttpClient]
+  providers: [HelpService, HttpClient, CategoryResolverService]
 })
 export class ProductModule { }

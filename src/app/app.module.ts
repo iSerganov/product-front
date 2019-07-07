@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { API_BASE_URL } from 'src/shared/api-services/services';
-
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +13,11 @@ import { API_BASE_URL } from 'src/shared/api-services/services';
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      closeButton: true,
+
+    })
   ],
   providers: [
     { provide: API_BASE_URL, useValue: 'http://localhost:2006' }

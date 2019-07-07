@@ -1,0 +1,19 @@
+mat-card {
+  &.content {
+    padding: 50px;
+    height: calc(100vh - 60px);
+
+    mat-slide-toggle {
+      margin-left: 20px;
+    }
+
+    .buttons-panel {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        margin: 0 10px
+      }
+    }
+  }
+}

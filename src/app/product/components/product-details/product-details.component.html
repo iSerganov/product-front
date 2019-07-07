@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="content" *ngIf="loaded">
   <h2 *ngIf="!isNew">Edit product: {{product?.id}}</h2>
   <h2 *ngIf="isNew">Create new product</h2>
 
@@ -23,10 +23,14 @@
           <mat-label>Price</mat-label>
           <input formControlName="price" matInput />
         </mat-form-field>
-        <div class="col-6">
+        <div class="col-6" style="padding: 20px;">
           <mat-label>Is Active</mat-label>
-          <mat-slide-toggle formControlName="isActive">Is Active</mat-slide-toggle>
+          <mat-slide-toggle formControlName="isActive"></mat-slide-toggle>
         </div>
+      </div>
+      <div class="buttons-panel">
+        <button mat-raised-button color="primary" (click)="save()" [disabled]="!productForm.dirty">Save</button>
+        <button mat-raised-button color="warn">Cancel</button>
       </div>
     </form>
   </mat-card>

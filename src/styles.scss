@@ -1,5 +1,6 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~ngx-toastr/toastr.css';
 
 body {
   background-color: #f4f4f4;
@@ -38,4 +39,8 @@ body {
     background-color: #17a2b8;
     color: #fff;
   }
+}
+
+#toast-container {
+  font-size: 12px !important;
 }
